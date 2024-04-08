@@ -1,5 +1,5 @@
 # Ansible_LEMP
-#Структура проекта Ansible_LEMP:
+# Структура проекта Ansible_LEMP:
 - LEMP
 - ansible.conf
 - defaults
