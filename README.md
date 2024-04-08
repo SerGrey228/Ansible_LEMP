@@ -1,5 +1,5 @@
 # Ansible_LEMP
-# Структура проекта Ansible_LEMP:
+## Структура проекта Ansible_LEMP:
 - LEMP
 - ansible.conf
 - defaults
@@ -12,7 +12,7 @@
 4. hosts - содаржит информацию об серверах (name, group, ip, port, путь к ssh-файлу)
 5. playbook.yml - файл для запуска роли LEMP
 
-Структура LEMP файла:
+## Структура LEMP файла:
 - tasks
   - default_settings.yml - playbook для обновления серверов
   - lemp_stack.yml - playbook для установки и настройки LEMP стека
@@ -20,7 +20,7 @@
 - vars
   - main.yml - содержит переменные для tasks
  
-Инструкция:
+## Инструкция:
 Уставнока LEMP производится на сервер linux debian 12, для установки требуется ssh соединение и права root для пользователя в папке sudoers на сервере
 
 1. Установить shh соединение с сервером, для этого на устройствах выполнить команды:
