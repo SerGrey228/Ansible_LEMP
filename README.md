@@ -25,7 +25,7 @@
 
 1. Установить shh соединение с сервером, для этого на устройствах выполнить команды:
    
-   sudo apt install ssh\n
+   sudo apt install ssh, 
    sudo ssh-keygen
 
    Перенести ключ из /home/user/.ssh/id_rsa.pub в файл /home/user/.ssh/authtorized_keys на сервере
