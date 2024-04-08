@@ -1,0 +1,12 @@
+---
+# vars file for LEMP
+php_packages:
+  - php-fpm
+  - php-mysql
+  - php-gd
+  - php-cli
+  - php-curl
+  - php-mbstring
+  - php-zip
+  - php-opcache
+  - php-xml

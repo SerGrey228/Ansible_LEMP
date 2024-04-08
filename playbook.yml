@@ -1,0 +1,5 @@
+- name: Install LEMP server
+  hosts: all
+  become: yes
+  roles:
+    - LEMP

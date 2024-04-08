@@ -1,0 +1,48 @@
+# Install Nginx
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: present
+
+#Install and settings MariaDB
+- name: Install MariaDB
+  apt:
+    pkg:
+      - mariadb-server
+    state: present
+
+- name: secure mariadb
+  become: yes
+  expect:
+    command: mysql_secure_installation
+    responses:
+      'Enter current password for root': ''
+      'Set root password': 'n'
+      'Remove anonymous users': 'y'
+      'Disallow root login remotely': 'y'
+      'Remove test database': 'y'
+      'Reload privilege tables now': 'y'
+    timeout: 1
+  register: secure_mariadb
+  failed_when: "'... Failed!' in secure_mariadb.stdout_lines"
+
+#Install and settings MariaDB
+- name: Install PHP
+  apt:
+    pkg:
+      "{{php_packages}}"
+    state: present
+
+- name: copy config File
+  copy:
+    src: ./default
+    dest: /etc/nginx/sites-enabled/default
+
+- name: restart Nginx
+  service: name=nginx state=restarted
+
+- name: Create file
+  copy:
+    dest: "/var/www/html/test.php"
+    content: |
+      <?php phpinfo(); ?>

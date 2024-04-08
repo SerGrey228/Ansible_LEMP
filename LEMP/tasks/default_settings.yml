@@ -1,0 +1,7 @@
+- name: update server
+  apt:
+    update_cache: yes
+
+- name: upgrade server
+  apt:
+    upgrade: yes

@@ -1,0 +1,6 @@
+---
+# tasks file for LEMP
+# upgrade and update servers
+- include_tasks: default_settings.yml
+# install and setup LEMP stack
+- include_tasks: lemp_stack.yml
